@@ -1,21 +1,32 @@
 {
   "name": "javascript-basic-exercises",
   "version": "0.1.0",
-  "private": true,
+  "title": "JavaScript Basic exercises",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fenny-mdg/javascript-basic-exercises.git"
+  },
   "dependencies": {
+    "@kentcdodds/react-workshop-app": "^6.0.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "chalk": "^5.3.0",
+    "codegen.macro": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jsdom",
+    "test:coverage": "npm run test -- --watchAll=false",
+    "test:exercises": "npm run test -- testing.*exercises\\/ --onlyChanged",
+    "setup": "node setup",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "typescript": "^5.3.3"
   }
 }

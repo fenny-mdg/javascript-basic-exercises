@@ -1,0 +1,37 @@
+<!-- Capitalize the first letter of each word in a string -->
+<!-- http://localhost:3000/isolated/final/04.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitalize the first letter of each word in a string</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="input" placeholder="Please enter a value" />
+      <button onclick="handleCapitalize()">Capitalize</button>
+    </div>
+
+    <script>
+      function capitalize(value) {
+        return value
+          .split(' ')
+          .map(word => word[0].toUpperCase() + word.slice(1))
+          .join(' ');
+      }
+
+      function handleCapitalize() {
+        const {value} = document.getElementById('input');
+
+        if (value) {
+          const result = capitalize(value);
+
+          alert(result);
+        } else {
+          alert('Please enter a value');
+        }
+      }
+    </script>
+  </body>
+</html>

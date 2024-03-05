@@ -1,0 +1,38 @@
+<!-- Vowel count -->
+<!-- http://localhost:3000/isolated/final/03.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vowel count</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="input" placeholder="Please enter a value" />
+      <button onclick="handleCount()">Count</button>
+    </div>
+
+    <script>
+      const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+
+      function countVowel(value) {
+        return value
+          .split('')
+          .filter(char => VOWELS.includes(char.toLowerCase())).length;
+      }
+
+      function handleCount() {
+        const {value} = document.getElementById('input');
+
+        if (value) {
+          const vowelCount = countVowel(value);
+
+          alert(`There are ${vowelCount} vowels in ${value}`);
+        } else {
+          alert('Please enter a value');
+        }
+      }
+    </script>
+  </body>
+</html>

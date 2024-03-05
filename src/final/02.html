@@ -1,0 +1,40 @@
+<!-- Palindrome -->
+<!-- http://localhost:3000/isolated/final/02.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="input" placeholder="Please enter a value" />
+      <button onclick="handleCheck()">Check</button>
+    </div>
+
+    <script>
+      function isPalindrome(value) {
+        const reversed = value.split('').reverse().join('');
+
+        return value === reversed;
+      }
+
+      function handleCheck() {
+        const {value} = document.getElementById('input');
+
+        if (value) {
+          const valueIsPalindrome = isPalindrome(value);
+
+          alert(
+            valueIsPalindrome
+              ? `${value} is a palindrome`
+              : `${value} is not a palindrome`,
+          );
+        } else {
+          alert('Please enter a value');
+        }
+      }
+    </script>
+  </body>
+</html>

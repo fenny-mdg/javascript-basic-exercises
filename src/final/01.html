@@ -1,0 +1,30 @@
+<!-- String Reverse -->
+<!-- http://localhost:3000/isolated/final/01.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Reverse</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="input" placeholder="Please enter a value" />
+      <button id="reverse" onclick="handleReverse()">Reverse</button>
+    </div>
+
+    <script>
+      function handleReverse() {
+        const {value} = document.getElementById('input');
+
+        if (value) {
+          const reversed = value.split('').reverse().join('');
+
+          alert(reversed);
+        } else {
+          alert('Please enter a value');
+        }
+      }
+    </script>
+  </body>
+</html>
