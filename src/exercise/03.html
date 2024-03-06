@@ -16,16 +16,6 @@
     <script>
       // Here's the vowel list
       const VOWELS = ['a', 'e', 'i', 'o', 'u'];
-
-      // Here's the function that counts the vowels, you need to complete it
-      // It should return the number of vowels in the given value
-      // function countVowel(value) {
-      //  const result = value.split('').filter(v => {
-      //     return VOWELS.includes(v)
-      //   });
-      //   return  result.length
-      //   // Write your code here
-      // }
       function countVowel(value) {
         return value
           .split('')
@@ -34,7 +24,7 @@
 
       function handleCount() {
         const {value} = document.getElementById('input');
-        alert(countVowel(value))
+        value ? alert(countVowel(value)): alert('Please enter a value');
         // Write your logic here
         // you will need to call the countVowel function
         // You can use the alert function to display the result
