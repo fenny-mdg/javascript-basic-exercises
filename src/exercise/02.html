@@ -16,16 +16,31 @@
     <script>
       // This function should return true if the value is a palindrome and false if it's not
       function isPalindrome(value) {
-        // Write your logic here
+        value = value.toLowerCase();
+        const regex = value.replace(/[^a-z0-9]/gi, "");
+        return regex === regex.split("").reverse().join("");
       }
 
       function handleCheck() {
-        const {value} = document.getElementById('input');
+        const value = document.getElementById("input").value;
 
-        // Write your logic here
-        // you will need to call the isPalindrome function
-        // You can use the alert function to display the result
+        // Check if the value is a palindrome
+        const palindrome = isPalindrome(value);
+
+        // Display the result using an alert
+        if (palindrome) {
+          alert(` ${value} is a palindrome! 🫡`);
+        } else {
+          alert(`${value} is not a palindrome. 😭`);
+        }
       }
+      document
+        .getElementById("input")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            handleCheck();
+          }
+        });
     </script>
   </body>
 </html>

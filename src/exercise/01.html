@@ -10,18 +10,37 @@
     <div>
       <input type="text" id="input" placeholder="Please enter a value" />
       <button id="reverse" onclick="handleReverse()">Reverse</button>
+      <p><strong>Result:</strong><span id="output"></span></p>
     </div>
 
     <script>
       function reverseString(value) {
-        // Write your code here
+        return value
+          .split("") // split divide value into a ordered list and place in a array
+          .reverse() // reverse() use to reverses an array place : first become last & last become first
+          .join(""); // join return new string by concatenanting all of the elemnts
       }
 
       function handleReverse() {
-        const {value} = document.getElementById('input');
+        const { value } = document.getElementById("input");
+        const displayer = document.getElementById("output");
+        const errorElement = document.getElementById("error");
 
-        // Write your code here
+        if (value === "") {
+          alert("Please enter any name");
+        } else {
+          const result = reverseString(value); // catch the value from field and use reverseString  func for it
+          displayer.innerHTML = result; // display the result on the page
+        }
       }
+      document
+        .getElementById("input")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            // when  user press Enter key
+            handleReverse(); // call this function
+          }
+        });
     </script>
   </body>
 </html>

@@ -14,22 +14,30 @@
     </div>
 
     <script>
-      // Here's the vowel list
-      const VOWELS = ['a', 'e', 'i', 'o', 'u'];
+      const VOWELS = ["a", "e", "i", "o", "u"];
 
-      // Here's the function that counts the vowels, you need to complete it
-      // It should return the number of vowels in the given value
       function countVowel(value) {
-        // Write your code here
+        const vowelCount = value
+          .split("")
+          .filter((item) => VOWELS.includes(item.toLowerCase()))
+          .reduce((count, vowel) => count + 1, 0);
+        return vowelCount;
       }
 
       function handleCount() {
-        const {value} = document.getElementById('input');
+        const { value } = document.getElementById("input");
 
-        // Write your logic here
-        // you will need to call the countVowel function
-        // You can use the alert function to display the result
+        const result = isNaN(value) ? countVowel(value.toLowerCase()) : NaN;
+
+        alert(`The number of vowels is ${result}`);
       }
+      document
+        .getElementById("input")
+        .addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            handleCount();
+          }
+        });
     </script>
   </body>
 </html>
