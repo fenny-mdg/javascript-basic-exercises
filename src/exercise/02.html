@@ -16,15 +16,22 @@
     <script>
       // This function should return true if the value is a palindrome and false if it's not
       function isPalindrome(value) {
-        // Write your logic here
+        const value_arr = value.split(''); // Conversion du String en Array
+        const reversed_arr = value_arr.reverse(); // Renverser l'Array
+        const reversed_str = reversed_arr.join(''); // Conversion de l'Array en String
+
+        return reversed_str == value;
       }
 
       function handleCheck() {
         const {value} = document.getElementById('input');
 
-        // Write your logic here
-        // you will need to call the isPalindrome function
-        // You can use the alert function to display the result
+        alert(
+          value ? (
+            isPalindrome(value) ? `${value} is a palindrome` : `${value} is not a palindrome`
+          )
+          : `Please ! Enter a value`
+        );
       }
     </script>
   </body>
