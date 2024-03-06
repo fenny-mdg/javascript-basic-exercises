@@ -15,11 +15,12 @@
     <script>
       function reverseString(value) {
         // Write your code here
+        return Array.from(value).reverse().join('')
       }
 
       function handleReverse() {
         const {value} = document.getElementById('input');
-
+        value ? alert(reverseString(value)) : alert('Please enter a value')
         // Write your code here
       }
     </script>
