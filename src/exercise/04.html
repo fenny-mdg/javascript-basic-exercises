@@ -15,15 +15,25 @@
 
     <script>
       function capitalize(value) {
-        // write your code here
+        const words = value.split(' ');
+
+        const capitalizedWords = words.map(word => {
+          return (word.length > 0) 
+            ? word[0].toUpperCase() + word.substring(1).toLowerCase()
+            : ''
+        });
+
+        const capitalizedString = capitalizedWords.join(' ');
+
+        return capitalizedString;
       }
 
       function handleCapitalize() {
         const {value} = document.getElementById('input');
 
-        // write your code here
-        // you will need to call the capitalize function
-        // you can use the alert function to display the result
+        value 
+          ? alert(capitalize(value))
+          : alert("Please enter a value");
       }
     </script>
   </body>
